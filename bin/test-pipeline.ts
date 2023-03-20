@@ -1,3 +1,17 @@
+#!/usr/bin/env node
+import * as cdk from 'aws-cdk-lib';
+import { TestPipelineStack } from '../lib/test-pipeline-stack';
+
+const app = new cdk.App();
+new TestPipelineStack(app, 'TestPipelineStack', {
+  env: {
+    account: '736189176631',
+    region: 'us-east-1',
+  }
+});
+
+app.synth();
+
 /* If you don't specify 'env', this stack will be environment-agnostic.
 * Account/Region-dependent features and context lookups will not work,
 * but a single synthesized template can be deployed anywhere. */
@@ -11,17 +25,3 @@
 // env: { account: '123456789012', region: 'us-east-1' },
 
 /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
-
-#!/usr/bin/env node
-import * as cdk from 'aws-cdk-lib';
-import { MyPipelineStack } from '../lib/test-pipeline-stack';
-
-const app = new cdk.App();
-new TestPipelineStack(app, 'TestPipelineStack', {
-  env: {
-    account: '736189176631',
-    region: 'us-west-1',
-  }
-});
-
-app.synth();
