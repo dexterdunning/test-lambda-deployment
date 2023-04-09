@@ -19,8 +19,8 @@ export class TestPipelineStack extends cdk.Stack {
         env: { account: '736189176631', region: 'us-west-2'}
     }));
 
-    pipeline.addStage(new TestPipelineAppStage(this, 'StageInDevAccount', {
-        env: { account: '075626608000', region: "us-west-2"}
-    }));
+    // pipeline.addStage(new TestPipelineAppStage(this, 'StageInDevAccount', {
+    //     env: { account: '075626608000', region: "us-west-2"}
+    // }));
   }
 }
